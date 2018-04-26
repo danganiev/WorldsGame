@@ -1,0 +1,114 @@
+const uint maxBrightness = 16;
+static float BrightnessValues[16] =
+{
+    0.03f,
+    0.04f,
+    0.05f,
+    0.07f,
+    0.11f,
+    0.14f,
+    0.17f,
+    0.21f,
+    0.29f,
+    0.35f,
+    0.41f,
+    0.52f,
+    0.63f,
+    0.74f,
+    0.85f,
+    1
+};
+
+//float4 ColorByTimeOfDay(float4 color, float timeOfDay) : COLOR0
+//{
+//    float4 newColor = color;
+//    if (timeOfDay <= 4)
+//    {
+//        newColor *= (timeOfDay + 3) / 12;
+//    }
+//    else if (timeOfDay <= 12)
+//    {
+//        newColor *= (timeOfDay) / 12;
+//    }
+//    else if (timeOfDay <= 23)
+//    {
+//        newColor *= (timeOfDay - 24) / -12;
+//    }
+//    else
+//    {
+//        newColor *= 1 / 12;
+//    }
+//    return newColor;
+//};
+
+float4 LerpColors(float4 currentColor, float4 nextColor, int previousHour, int nextHour, float timeOfDay) : COLOR0
+{
+	float y;
+	if (previousHour < nextHour){		
+		y = nextHour - previousHour;
+		return lerp(currentColor, nextColor, (nextHour - (nextHour - timeOfDay)) / y);
+		//return lerp(currentColor, nextColor, 8.0f);
+
+	}
+	// This actually shouldn't happen at all
+	else if (previousHour == nextHour) {
+	//	return lerp(currentColor, nextColor, (1 - timeOfDay - (int)timeOfDay));
+	}
+	else {
+		y = 24 - (previousHour - nextHour);
+		if (timeOfDay > 12){
+			float absTime = abs(timeOfDay - previousHour);			
+			return lerp(currentColor, nextColor, absTime / y);
+		}
+		else{
+			return lerp(currentColor, nextColor, (24 - (previousHour - timeOfDay)) / y);
+		}
+	}
+
+	return currentColor;
+}
+
+//Calculating the angle of the sun
+float4 LightPositionByTimeOfDay(float timeOfDay)
+{
+    float4 LightPosition;
+    float sunAngle = radians(360 * timeOfDay/24 - 135);
+    LightPosition.x = 0;
+    LightPosition.y = sin(sunAngle);
+    LightPosition.z = cos(sunAngle);
+    LightPosition.w = 1.0;
+    return normalize(LightPosition);
+}
+
+int2 ExtractBitsFromLight(float value)
+{
+    int2 result;
+    int intValue = (int)value;
+    result.x = intValue % 16;
+    result.y = intValue / 16;
+    
+    return result;
+}
+
+float mod(float x, float y)
+{
+    return x - y * floor(x/y);
+}
+
+float random(float2 p)
+{
+    // We need irrationals for pseudo randomness.
+    // Most (all?) known transcendental numbers will (generally) work.
+    const float2 r = float2(
+      23.1406926327792690,  // e^pi (Gelfond's constant)
+       2.6651441426902251); // 2^sqrt(2) (Gelfond–Schneider constant)
+    return frac(cos(mod(123456789., 1e-7 + 256. * dot(p,r))));
+}
+
+float GetMipLevel(float2 iUV, float2 iTextureSize)
+{
+    float2 dx = ddx(iUV * iTextureSize.x);
+    float2 dy = ddy(iUV * iTextureSize.y);
+    float d = max(dot(dx, dx), dot(dy, dy));
+    return 0.5 * log2(d);
+}

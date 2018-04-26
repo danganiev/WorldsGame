@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2CB08AB5-46B8-44A9-92AE-33790629696D}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nuclex.UserInterface</RootNamespace>
+    <AssemblyName>Nuclex.UserInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaProfile>HiDef</XnaProfile>
+    <XnaCrossPlatformGroupID>a0c2ad22-cd6e-4bff-aa6c-3068757287de</XnaCrossPlatformGroupID>
+    <XnaOutputType>Library</XnaOutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\xna-4.0-x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS;UNITTEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+    <DocumentationFile>bin\xna-4.0-x86\Debug\Nuclex.UserInterface.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\xna-4.0-x86\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS;UNITTEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>true</XnaCompressContent>
+    <DocumentationFile>bin\xna-4.0-x86\Release\Nuclex.UserInterface.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Framework.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Video, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Avatar, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Storage, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Nuclex.Input">
+      <HintPath>..\..\Libs\Nuclex.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclex.Support">
+      <HintPath>..\..\Libs\Nuclex.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Controls\DesktopControl.cs" />
+    <Compile Include="Source\Controls\Desktop\IconCellControl.cs" />
+    <Compile Include="Source\Controls\Worlds\FlatItemCountLabelControlRenderer.cs" />
+    <Compile Include="Source\Controls\Worlds\InventoryCellControl.cs" />
+    <Compile Include="Source\Controls\Desktop\SpriteControl.cs" />
+    <Compile Include="Source\Controls\Desktop\TextPopupControl.cs" />
+    <Compile Include="Source\Controls\IFocusable.cs" />
+    <Compile Include="Source\Controls\ProgressControl.cs" />
+    <Compile Include="Source\Controls\Control.Input.cs">
+      <DependentUpon>Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\ControlEventArgs.cs" />
+    <Compile Include="Source\Controls\Arcade\CommandControl.cs" />
+    <Compile Include="Source\Controls\Arcade\PanelControl.cs" />
+    <Compile Include="Source\Controls\Control.cs" />
+    <Compile Include="Source\Controls\Desktop\ButtonControl.cs" />
+    <Compile Include="Source\Controls\Desktop\ChoiceControl.cs" />
+    <Compile Include="Source\Controls\Desktop\CloseWindowButtonControl.cs" />
+    <Compile Include="Source\Controls\Desktop\HorizontalSliderControl.cs" />
+    <Compile Include="Source\Controls\Desktop\IListRowLocator.cs" />
+    <Compile Include="Source\Controls\Desktop\IOpeningLocator.cs" />
+    <Compile Include="Source\Controls\Desktop\IThumbLocator.cs" />
+    <Compile Include="Source\Controls\Desktop\ListControl.cs" />
+    <Compile Include="Source\Controls\Desktop\OptionControl.cs" />
+    <Compile Include="Source\Controls\Desktop\SliderControl.cs" />
+    <Compile Include="Source\Controls\Desktop\InputControl.cs" />
+    <Compile Include="Source\Controls\Desktop\VerticalSliderControl.cs" />
+    <Compile Include="Source\Controls\Desktop\WindowControl.cs" />
+    <Compile Include="Source\Controls\Desktop\DraggableControl.cs" />
+    <Compile Include="Source\Controls\LabelControl.cs" />
+    <Compile Include="Source\Controls\ParentingControlCollection.cs" />
+    <Compile Include="Source\Controls\PressableControl.cs" />
+    <Compile Include="Source\Controls\Worlds\FlatInventoryControlRenderer.cs" />
+    <Compile Include="Source\Controls\Worlds\InventoryControl.cs" />
+    <Compile Include="Source\Controls\Worlds\ItemCountLabelControl.cs" />
+    <Compile Include="Source\DuplicateNameException.cs" />
+    <Compile Include="Source\GuiManager.cs" />
+    <Compile Include="Source\IGuiService.cs" />
+    <Compile Include="Source\Input\Command.cs" />
+    <Compile Include="Source\Input\DefaultInputCapturer.cs" />
+    <Compile Include="Source\Input\IInputReceiver.cs" />
+    <Compile Include="Source\Input\IInputCapturer.cs" />
+    <Compile Include="Source\Controls\IWritable.cs" />
+    <Compile Include="Source\RectangleF.cs" />
+    <Compile Include="Source\UniRectangle.cs" />
+    <Compile Include="Source\UniScalar.cs" />
+    <Compile Include="Source\Screen.cs" />
+    <Compile Include="Source\UniVector.cs" />
+    <Compile Include="Source\Visuals\Flat\FlatGuiGraphics.Drawing.cs">
+      <DependentUpon>FlatGuiGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Visuals\Flat\FlatGuiGraphics.SkinParsing2.cs">
+      <DependentUpon>FlatGuiGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Visuals\Flat\OpeningLocator.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatButtonControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\FlatGuiGraphics.cs" />
+    <Compile Include="Source\Visuals\Flat\FlatGuiVisualizer.cs" />
+    <Compile Include="Source\Visuals\Flat\FlatGuiGraphics.SkinParsing.cs">
+      <DependentUpon>FlatGuiGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatChoiceControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatHorizontalSliderControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatIconCellControlRenderer.cs" />
+    <Compile Include="Source\Controls\Worlds\FlatInventoryCellControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatLabelControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatListControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatOptionControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatPanelControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatProgressControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatSpriteControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatTextPopupControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatVerticalSliderControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatInputControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\Renderers\FlatWindowControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\IFlatControlRenderer.cs" />
+    <Compile Include="Source\Visuals\Flat\IFlatGuiGraphics.cs" />
+    <Compile Include="Source\Visuals\IGuiVisualizer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>
